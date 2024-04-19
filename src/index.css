@@ -1,13 +1,315 @@
+@font-face {
+  font-family: Pokemon;
+  src: url(./assets/PokemonGb.ttf);
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.header {
+  background-color: rgb(180, 45, 45); /* Set the background color to red */
+  text-align: center; /* Center content within the header*/
+  padding: 12px; /* Add padding around content for spacing */
+  background-size: cover; /* Key Property */
+  background-position: center; /* Optionally center the image */
+  height: 100%;
+}
+
+.header img {
+  display: block; /* Make the image a block element for easier centering */
+  margin-left: auto; /* Centers the image horizontally */
+  margin-right: auto; /* Centers the image horizontally */
+  max-width: 100%; /* Make image responsive, prevents overflow  */
+  height: auto; /* Maintain aspect ratio automatically */
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  background-color: white; /* Adjust as needed */
+  padding: 12px;
+  display: flex;
+  justify-content: space-around; /* Distribute items evenly */
+  align-items: center; /* Vertically center content */
+  position: relative; /* For positioning the dropdown list */
+}
+
+.dropdown-menu span {
+  width: 200px;
+  height: 30px;
+  margin: 10px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(105, 105, 105);
+  border-radius: 10px;
+  display: flex; /* Enable Flexbox */
+  align-items: center; /* Vertical centering */
+  justify-content: center;
+  font-family: "Roboto";
+}
+
+.region-image {
+  height: 200px;
+  width: 280px;
+  border-radius: 15px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+}
+
+.region-image:hover {
+  cursor: pointer;
+  transform: scale(0.95);
+  opacity: 0.9; /* Normal state */
+  transition: opacity 0.15s ease-in-out; /* Smooth transition */
+}
+
+.region-image:active {
+  transform: scale(0.92); /* Slightly shrink the image */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Add a shadow */
+  transition: opacity 0.15s ease-in-out; /* Smooth transition */
+}
+
+.region-selector {
+  background: black;
+}
+
+.region-row-1 {
+  padding-top: 100px;
+}
+
+.region-row-1,
+.region-row-2,
+.region-row-3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.region-row-2 {
+  padding-top: 50px;
+}
+
+.region-row-3 {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.region-name-text {
+  padding: 3px;
+  margin-top: 5px;
+  margin-left: 110px;
+  text-align: center;
+  font-family: "Roboto";
+  background-color: #000000;
+  color: azure;
+  width: 60px;
+  border-radius: 10px;
+}
+
+.region-body {
+}
+.pokecard {
+  font-family: "Roboto";
+  display: flex; /* Makes the main card a flex container */
+  align-items: center; /*Align items vertically in the center*/
+  justify-content: flex-start; /* Align items to the start of the container */
+  gap: 20px; /* Adds some space between each element */
+  padding: 10px; /* Adds some padding inside the card */
+  border: 1px solid #ccc; /* Adds a border around the card */
+  border-radius: 8px; /* Adds rounded corners to the card */
+  background-color: #f9f9f9; /* Light background color */
+  margin-bottom: 10px; /* Adds space between cards if you have multiple cards */
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+
+.pokecard-id {
+  margin-left: 2rem;
+}
+
+.pokecard-img {
+  width: 100px; /* Adjust as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-left: 30px;
+}
+
+.pokecard-name {
+  width: 300px;
+  text-align: center;
+  text-transform: capitalize;
+  margin-left: 10px;
+}
+
+.pokecard-type {
+  margin-left: 30px;
+  width: 400px;
+  text-align: start;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.type-normal {
+  background-color: #a8a878;
+  color: black;
+}
+.type-fire {
+  background-color: #f08030;
+  color: white;
+}
+.type-water {
+  background-color: #6890f0;
+  color: white;
+}
+.type-electric {
+  background-color: #f8d030;
+  color: black;
+}
+.type-grass {
+  background-color: #78c850;
+  color: white;
+}
+.type-ice {
+  background-color: #98d8d8;
+  color: black;
+}
+.type-fighting {
+  background-color: #c03028;
+  color: white;
+}
+.type-poison {
+  background-color: #a040a0;
+  color: white;
+}
+.type-ground {
+  background-color: #e0c068;
+  color: black;
+}
+.type-flying {
+  background-color: #a890f0;
+  color: black;
+}
+.type-psychic {
+  background-color: #f85888;
+  color: white;
+}
+.type-bug {
+  background-color: #a8b820;
+  color: black;
+}
+.type-rock {
+  background-color: #b8a038;
+  color: white;
+}
+.type-ghost {
+  background-color: #705898;
+  color: white;
+}
+.type-dragon {
+  background-color: #7038f8;
+  color: white;
+}
+.type-dark {
+  background-color: #705848;
+  color: white;
+}
+.type-steel {
+  background-color: #b8b8d0;
+  color: black;
+}
+.type-fairy {
+  background-color: #ee99ac;
+  color: black;
+}
+.pokecard-type div {
+  font-family: Pokemon;
+  width: 80px;
+  text-align: center;
+  font-size: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 2px;
+  text-transform: capitalize;
+  display: inline-block;
+}
+
+.pokecard-stats {
+  display: flex;
+  flex-direction: row;
+  margin-left: 0rem;
+  padding: 2px 5px;
+  justify-self: end;
+  margin-left: 100px;
+  margin-bottom: 12px;
+}
+
+.ind-stat {
+  width: 5rem;
+  text-align: center;
+}
+
+.ind-stat p {
+  font-size: 10px;
+  font-family: "Pokemon";
+}
+
+.ind-stat div {
+  font-size: small;
+  height: 22px;
+  background-color: #000000;
+  color: aliceblue;
+  width: 25px;
+  margin-left: 1.7rem;
+  padding-top: 4px;
+  margin-bottom: 3px;
+  border-radius: 22px;
+}
+
+.pokecard-ability {
+  width: 15rem;
+  margin-left: 4rem;
+}
+
+.pokecard-ability div {
+  font-size: smaller;
+}
+
+.Info-bar {
+  font-family: "Pokemon";
+  display: flex;
+  flex-direction: row;
+  font-size: small;
+  background-color: #000000;
+  margin: 2rem;
+  color: white;
+  padding: 10px;
+  width: 94.5rem;
+  margin-left: 80px;
+  border-radius: 10px;
+}
+
+.Info-bar-name {
+  margin-left: 6rem;
+}
+
+.Info-bar-type {
+  margin-left: 11rem;
+}
+
+.Info-bar-abilities {
+  margin-left: 16rem;
+}
+
+.Info-bar-stats {
+  margin-left: 21rem;
 }
